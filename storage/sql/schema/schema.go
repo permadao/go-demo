@@ -1,10 +1,8 @@
 package schema
 
-import "time"
+import "gorm.io/gorm"
 
 type TestTable struct {
-	ID        int64      `gorm:"primary_key;auto_increment" json:"id"`
-	UpdatedAt *time.Time `gorm:"ASSOCIATION_AUTOUPDATE" json:"-"`
-	CreatedAt *time.Time `gorm:"ASSOCIATION_AUTOCREATE" json:"-"`
+	gorm.Model
 	TestField string
 }
